@@ -22,7 +22,8 @@ namespace MVC.Controllers
         // GET: Dialysis
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Dialysis.Include(d => d.Pouch);
+            var applicationDbContext = _context.Dialysis.Include(d => d.Pouch)
+                .OrderBy(d => d.DialysisDate);
             return View(await applicationDbContext.ToListAsync());
         }
 
