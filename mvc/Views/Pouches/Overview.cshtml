@@ -1,16 +1,13 @@
-﻿@model IEnumerable<MVC.Models.Pouch>
+﻿@model IEnumerable<MVC.Models.PouchViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Overview";
 }
 
-<h1>Index</h1>
+<h1>Overview</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
-</p>
-<p>
-    <a asp-action="Overview">Overview</a>
+    <a asp-action="Index">Index</a>
 </p>
 <table class="table">
     <thead>
@@ -33,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.StockOut)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemainingDays)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -59,9 +58,7 @@
                     @Html.DisplayFor(modelItem => item.StockOut)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.PouchID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.PouchID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.PouchID">Delete</a>
+                    @Html.DisplayFor(modelItem => item.RemainingDays)
                 </td>
             </tr>
         }

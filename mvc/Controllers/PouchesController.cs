@@ -25,6 +25,27 @@ namespace MVC.Controllers
             return View(await _context.Pouch.ToListAsync());
         }
 
+        // GET: Pouches Overview
+        public async Task<IActionResult> Overview()
+        {
+            var data = await _context.Pouch.ToListAsync();
+
+            IEnumerable<PouchViewModel> pouches = new List<PouchViewModel>();
+            pouches = data.Select(p => new PouchViewModel
+            {
+                PouchID = p.PouchID,
+                Name = p.Name,
+                Description = p.Description,
+                Amount = p.Amount,
+                Weight = p.Weight,
+                UsagePerDay = p.UsagePerDay,
+                StockOut = p.StockOut
+            })
+            .AsEnumerable();
+
+            return View(pouches);
+        }
+
         // GET: Pouches/Details/5
         public async Task<IActionResult> Details(int? id)
         {
