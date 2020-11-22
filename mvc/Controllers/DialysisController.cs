@@ -94,7 +94,7 @@ namespace MVC.Controllers
                 await _context.SaveChangesAsync();
 
                 Pouch pou = _context.Pouch.First(p => p.PouchID == dialysis.PouchID);
-                pou.StockOut -= pou.StockOut;
+                pou.StockOut -= 1;
 
                 await _context.SaveChangesAsync();
 

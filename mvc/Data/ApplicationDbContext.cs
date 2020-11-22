@@ -18,5 +18,7 @@ namespace MVC.Data
         public DbSet<MVC.Models.Refuel> Refuel { get; set; }
         public DbSet<MVC.Models.Pouch> Pouch { get; set; }
         public DbSet<MVC.Models.Dialysis> Dialysis { get; set; }
+        public DbSet<MVC.Models.Delivery> Delivery { get; set; }
+        public DbSet<MVC.Models.DeliveryPouch> DeliveryPouch { get; set; }
     }
 }
