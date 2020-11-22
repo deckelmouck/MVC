@@ -1,0 +1,61 @@
+﻿@model List<MVC.Models.DailyDialysisViewModel>
+@{
+    ViewData["Title"] = "DailyDialysisViewModel";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DailyDialysis</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    DialysisDate
+                </th>
+                <th>
+                    DialysisTime
+                </th>
+                <th>
+                    OutWeight
+                </th>
+                <th>
+                    Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DialysisDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Outweight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Diff)
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <p>
+        @*@Model.Dialysis.Sum(x => x.OutWeight)*@
+    </p>
+    <p>
+        @*@Model.Dialysis.Sum(y => y.Pouch.Weight)*@
+    </p>
+
+</body>
+</html>

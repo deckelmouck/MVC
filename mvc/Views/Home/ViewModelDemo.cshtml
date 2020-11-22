@@ -1,0 +1,51 @@
+﻿
+@model MVC.Models.StudentFacultyViewModel
+@{
+    ViewBag.Title = "Using ViewModel";
+}
+
+<h2>Multiple models using ViewModel</h2>
+
+<h3>Student List</h3>
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Roll No.</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AllStudents)
+                {
+                    <tr><td>@item.StudentId</td><td>@item.Name</td> <td>@item.RollNo</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<h3>Faculty List</h3>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th align="center">Faculty Id</th>
+                    <th align="center">Faculty Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AllFaculties)
+                {
+                    <tr><td>@item.FacultyId</td><td>@item.Name</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
