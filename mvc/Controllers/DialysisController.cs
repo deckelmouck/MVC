@@ -32,7 +32,7 @@ namespace MVC.Controllers
         {
             List<DailyDialysisViewModel> dailyDialysisViewModel = new List<DailyDialysisViewModel>();
 
-            var data = _context.Dialysis
+            var data = await _context.Dialysis
                 .Join(
                 _context.Pouch,
                 d => d.PouchID,
@@ -40,7 +40,7 @@ namespace MVC.Controllers
                 (d, p) => new { d.DialysisDate, d.OutWeight, p.Weight, Diff = 0 })
                 .GroupBy(x => x.DialysisDate)
                 .Select(y => new { DialysisDate = y.Key.Date, Outweight = y.Sum(o => o.OutWeight), Weight = y.Sum(g => g.Weight), Diff = y.Sum(h => h.OutWeight - h.Weight) })
-                .ToList();
+                .ToListAsync();
 
             dailyDialysisViewModel = data.Select(a => new DailyDialysisViewModel
             {
