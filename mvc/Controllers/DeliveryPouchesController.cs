@@ -109,7 +109,8 @@ namespace MVC.Controllers
                     _context.Update(deliveryPouch);
                     await _context.SaveChangesAsync();
 
-                    if (deliveryPouch.Delivered)
+					//TODO issue #6 - https://github.com/deckelmouck/MVC/issues/6
+					if (deliveryPouch.Delivered)
                     {
                         Pouch pouch = _context.Pouch.First(p => p.PouchID == deliveryPouch.PouchID);
                         pouch.StockOut += deliveryPouch.OrderQuantity;
