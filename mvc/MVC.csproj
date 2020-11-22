@@ -12,6 +12,10 @@
     <Compile Remove="Data\Migrations\20200506094007_initialRefuels.Designer.cs" />
     <Compile Remove="Data\Migrations\20201118154143_pouchanddialyses.cs" />
     <Compile Remove="Data\Migrations\20201118154143_pouchanddialyses.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201122123802_add_Delivery_DeliveryPouch.cs" />
+    <Compile Remove="Data\Migrations\20201122123802_add_Delivery_DeliveryPouch.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201122125112_addDeliveryAndDeliveryPouches.cs" />
+    <Compile Remove="Data\Migrations\20201122125112_addDeliveryAndDeliveryPouches.Designer.cs" />
   </ItemGroup>
 
 
@@ -21,9 +25,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
